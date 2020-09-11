@@ -1,4 +1,4 @@
-[
+export default [
   {
     "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/shojberg/128.jpg",
     "name": "Mango",
