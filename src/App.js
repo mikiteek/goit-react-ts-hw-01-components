@@ -1,6 +1,8 @@
 import React from "react";
-import Profile from "./components/Profile/Profile"
+import Profile from "./components/Profile/Profile";
+import Statistics from "./components/Statistics/Statistics";
 import user from "./user.json";
+import statistics from "./statistical-data.json";
 
 const App = () => {
   return (
@@ -12,8 +14,12 @@ const App = () => {
         name={user.name}
         stats={user.stats}
       >
-
       </Profile>
+      <Statistics
+        title="Upload stats"
+        stats={statistics}
+      >
+      </Statistics>
     </div>
 
 
