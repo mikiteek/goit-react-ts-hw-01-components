@@ -1,0 +1,28 @@
+.statistics {
+  margin: 50px auto;
+  width: 400px;
+  background-color: antiquewhite;
+}
+
+.title {
+  min-height: 80px;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.stat-list {
+  display: flex;
+}
+
+.item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: teal;
+  color: #ffffff;
+}
