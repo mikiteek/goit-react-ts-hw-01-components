@@ -1,11 +1,21 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styles from "./FriendList.module.css";
 
-const FriendList = ({friends}) => {
+interface FriendListProps {
+  friends: any,
+}
+
+interface friendProps {
+  avatar: string,
+  name: string,
+  isOnline: boolean,
+  id: string
+}
+
+const FriendList = ({friends}: FriendListProps) => {
   return (
     <ul className={styles["friend-list"]}>
-      {friends.map(({avatar, name, isOnline, id}) => {
+      {friends.map(({avatar, name, isOnline, id}: friendProps) => {
         const statusClasses = [styles.status, isOnline? styles.isOnline : styles.isOffline];
         return (
           <li key={id} className={styles["item"]}>
@@ -17,17 +27,6 @@ const FriendList = ({friends}) => {
       })}
     </ul>
   );
-};
-
-FriendList.propTypes = {
-  friends: PropTypes.arrayOf(
-    PropTypes.exact({
-      avatar: PropTypes.string,
-      name: PropTypes.string,
-      isOnline: PropTypes.bool,
-      id: PropTypes.number,
-    })
-  )
 };
 
 export default FriendList;

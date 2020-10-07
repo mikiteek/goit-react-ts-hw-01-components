@@ -1,8 +1,18 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styles from "./TransactionHistory.module.css";
 
-const TransactionHistory = ({items}) => {
+interface TransactionHistoryProps {
+  items: any,
+}
+
+interface itemsProps {
+  id: string,
+  type: string,
+  amount: string,
+  currency: string,
+}
+
+const TransactionHistory = ({items}: TransactionHistoryProps) => {
   return (
     <table className={styles["transaction-history"]}>
       <thead>
@@ -14,7 +24,7 @@ const TransactionHistory = ({items}) => {
       </thead>
 
       <tbody>
-      {items.map(({id, type, amount, currency}) => (
+      {items.map(({id, type, amount, currency}: itemsProps) => (
         <tr key={id} className={styles["table-row"]}>
           <td className={styles["table-td"]}>{type}</td>
           <td className={styles["table-td"]}>{amount}</td>
@@ -23,17 +33,6 @@ const TransactionHistory = ({items}) => {
       ))}
       </tbody>
     </table>
-  )
-}
-
-TransactionHistory.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.exact({
-      id: PropTypes.string.isRequired,
-      type: PropTypes.string.isRequired,
-      amount: PropTypes.string.isRequired,
-      currency: PropTypes.string.isRequired,
-    })
   )
 }
 
