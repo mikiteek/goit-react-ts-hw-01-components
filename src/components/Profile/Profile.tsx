@@ -1,8 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styles from "./Profile.module.css";
 
-const Profile = ({name, tag, location, avatar, stats}) => (
+interface ProfileProps {
+  avatar: string,
+  tag: string,
+  location: string,
+  name: string,
+  stats: any,
+}
+
+const Profile = ({avatar, tag, location, name, stats}: ProfileProps) => (
   <div className={styles.profile}>
     <div className={styles.description}>
       <img src={avatar} alt="user avatar" className={styles.avatar}/>
@@ -26,20 +33,5 @@ const Profile = ({name, tag, location, avatar, stats}) => (
     </ul>
   </div>
 );
-
-Profile.defaultProps = {
-
-}
-Profile.propTypes = {
-  name: PropTypes.string.isRequired,
-  tag: PropTypes.string,
-  location:PropTypes.string,
-  avatar: PropTypes.string,
-  stats: PropTypes.exact({
-    followers: PropTypes.number,
-    views: PropTypes.number,
-    likes: PropTypes.number
-  })
-}
 
 export default Profile;

@@ -17,24 +17,15 @@ const App = () => {
         location={user.location}
         name={user.name}
         stats={user.stats}
-      >
-      </Profile>
-
+      />
       <Statistics
         title="Upload stats"
         stats={statistics}
-      >
-      </Statistics>
-
-      <FriendList
-       friends={friendList}
-      >
-      </FriendList>
-
+      />
+      <FriendList friends={friendList}/>
       <TransactionHistory
         items={transactions}
-      >
-      </TransactionHistory>
+      />
     </div>
   );
 }
